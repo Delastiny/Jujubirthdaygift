@@ -1,0 +1,99 @@
+*, *::before, * ::after {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box; /*Borderbox accounts for padding in height and width*/
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+}
+
+.morph {
+    position: relative;
+    font-size: 120px;
+    background-color: black;
+    color: #fdfdfd;
+    min-height: 50vh; /*fills out the entire canvas*/
+    filter: contrast(25) blur(1px); /*Contrast changes the words texture, and blur blurs the words*/
+
+}
+
+.word {
+    position: absolute; /*Makes all of the words appear the same place*/
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);/*Changes the position of the words*/
+    animation: word 16s infinite ease-in-out;
+}
+
+.word:nth-child(1) {
+    animation-delay: -18s;
+}
+.word:nth-child(2) {
+    animation-delay: -14s;
+}
+.word:nth-child(3) {
+    animation-delay: -12s;
+}
+.word:nth-child(4) {
+    animation-delay: -10s;
+}
+.word:nth-child(5) {
+    animation-delay: -08s;
+}
+.word:nth-child(6) {
+    animation-delay: -06;
+}
+
+
+
+
+@keyframes word {
+    0%, 5%, 100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+    20%, 80% {
+        filter: blur(1em); /*ANIMATION ZOOMING IN AND OUT OH SHIT*/
+        opacity: 0;
+    }
+
+}
+
+button {
+    height: 100px;
+    width: 150px;
+    background-color: rgb(173, 216, 230);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    border-radius: 30px;
+    text-decoration: none;
+    animation: button 10s ease-in; /* shows the button after a decided amount of time*/
+}
+
+.centertext {
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(96, 78, 78);
+    font-weight: 600;
+   
+}
+
+@keyframes button {
+    0%, 5%, 100% {
+        filter: blur(0px);
+        opacity: 1;
+     
+    }
+    20%, 80% {
+        filter: blur(1em); /*ANIMATION ZOOMING IN AND OUT OH SHIT*/
+        opacity: 0;
+  
+    }
+}

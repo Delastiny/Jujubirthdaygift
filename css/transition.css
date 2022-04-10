@@ -1,0 +1,33 @@
+.transition-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    background-color:rgb(173, 216, 230);
+    opacity: 0; /*Does so we don't see the transition before it's active*/
+    pointer-events: none; /*Now it's hidden so you can still interact with the button*/
+    transition: 0.5s ease-out;
+}
+
+.transition-1.is-active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.transition-2 {
+    position: fixed;
+    top: 0;
+    left: -100%; /*Wil still be on your screen with width*/
+    width: 100%;
+    bottom: 0;
+    z-index: 101;
+    background-color:rgb(173, 216, 230);
+    transition: 0.5s ease-out;
+}
+
+.transition-.is-active {
+   left: 0px;
+   
+}

@@ -1,0 +1,108 @@
+body {
+    background: rgb(173, 216, 230);
+    display: grid;
+    place-items: center;  /*aligns items in the center*/
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*Navigation section*/
+section {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+}
+
+
+nav {
+    border-radius: 10px;
+    padding-right: 2.5em;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgb(96, 78, 78);
+    
+}
+
+nav li {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+nav li a {
+    color: rgb(241, 238, 224);
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: 73;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+/*Card section*/
+.card {
+    font-family:'Courier New', Courier, monospace;
+    background: white;
+    border-radius: 10px; /*makes the corners on the white card round :D*/
+    height: 85vh;
+    width: 80vw;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); /*adds black shadow to the card*/
+    text-align: center; /*Aligns the "text" such as images in it's center*/
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; /*display, flex-direction and justify content makes sure that the content
+    can stay on the middle of the card. display: flex does so they are next to eachother, flex direction makes them go into two columns and finally justify makes it go into the center. making a centered card :D*/
+    align-items: center;
+    padding: 1em;
+    overflow: hidden; /*Hides the image that goes outside the box when window size changes*/
+}
+.card * {
+    transition: all 0.8s ease-in-out; /*Animates the text and images to slowly go in and out if window sizes changes - I love it*/
+}
+
+@media only screen and (min-width: 1000px) {
+    .card {
+        flex-direction: row-reverse; /*Does so the rows are next to each other*/
+    }
+    .card img.birthday {
+        width: 100%;
+        max-width: 50vw; /*image height if 1000px*/
+        max-height: unset; /*Since the max-height is unset, the image won't change weirdly when you change how big the window is.*/
+    }
+}
+
+@media only screen and (min-height: 640px) /*if window is 640px in heights this will happen*/ {
+    .card {
+        flex-direction: row-reverse; /*Does so the rows are next to each other*/
+    }
+    .card img.birthday {
+        width: 100%;
+        max-width: 50vw; /*image height if 1000px*/
+        max-height: unset; /*Since the max-height is unset, the image won't change weirdly when you change how big the window is.*/
+    }
+}
+
+img.birthday {
+    max-height: 40vh; /*changes the height of the image*/
+}
+.text{
+    padding: 1em; /*padding between the text and image*/
+}
+
+.muted {
+    opacity: 0.8; /* does so the text is a bit more faded*/
+}
+.space {
+    height: 100px
+}
+
